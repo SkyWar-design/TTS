@@ -20,7 +20,7 @@ _pad = "<PAD>"
 _eos = "<EOS>"
 _bos = "<BOS>"
 _blank = "<BLNK>"  # TODO: check if we need this alongside with PAD
-#_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+# _characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 _characters = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 # _punctuations = "!'(),-.:;? "
 _punctuations = "!'()“”«»„“,-—.:ː;? ",
@@ -149,15 +149,15 @@ class BaseCharacters:
     """
 
     def __init__(
-        self,
-        characters: str = None,
-        punctuations: str = None,
-        pad: str = None,
-        eos: str = None,
-        bos: str = None,
-        blank: str = None,
-        is_unique: bool = False,
-        is_sorted: bool = True,
+            self,
+            characters: str = None,
+            punctuations: str = None,
+            pad: str = None,
+            eos: str = None,
+            bos: str = None,
+            blank: str = None,
+            is_unique: bool = False,
+            is_sorted: bool = True,
     ) -> None:
         self._characters = characters
         self._punctuations = punctuations
@@ -262,7 +262,7 @@ class BaseCharacters:
         if self.is_unique:
             duplicates = {x for x in self.vocab if self.vocab.count(x) > 1}
             assert (
-                len(self.vocab) == len(self._char_to_id) == len(self._id_to_char)
+                    len(self.vocab) == len(self._char_to_id) == len(self._id_to_char)
             ), f" [!] There are duplicate characters in the character set. {duplicates}"
 
     def char_to_id(self, char: str) -> int:
@@ -348,15 +348,15 @@ class IPAPhonemes(BaseCharacters):
     """
 
     def __init__(
-        self,
-        characters: str = _phonemes,
-        punctuations: str = _punctuations,
-        pad: str = _pad,
-        eos: str = _eos,
-        bos: str = _bos,
-        blank: str = _blank,
-        is_unique: bool = False,
-        is_sorted: bool = True,
+            self,
+            characters: str = _phonemes,
+            punctuations: str = _punctuations,
+            pad: str = _pad,
+            eos: str = _eos,
+            bos: str = _bos,
+            blank: str = _blank,
+            is_unique: bool = False,
+            is_sorted: bool = True,
     ) -> None:
         super().__init__(characters, punctuations, pad, eos, bos, blank, is_unique, is_sorted)
 
@@ -423,15 +423,15 @@ class Graphemes(BaseCharacters):
     """
 
     def __init__(
-        self,
-        characters: str = _characters,
-        punctuations: str = _punctuations,
-        pad: str = _pad,
-        eos: str = _eos,
-        bos: str = _bos,
-        blank: str = _blank,
-        is_unique: bool = False,
-        is_sorted: bool = True,
+            self,
+            characters: str = _characters,
+            punctuations: str = _punctuations,
+            pad: str = _pad,
+            eos: str = _eos,
+            bos: str = _bos,
+            blank: str = _blank,
+            is_unique: bool = False,
+            is_sorted: bool = True,
     ) -> None:
         super().__init__(characters, punctuations, pad, eos, bos, blank, is_unique, is_sorted)
 
