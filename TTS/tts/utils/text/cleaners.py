@@ -9,7 +9,9 @@ from TTS.tts.utils.text.chinese_mandarin.numbers import replace_numbers_to_chara
 
 from .english.abbreviations import abbreviations_en
 from .english.number_norm import normalize_numbers as en_normalize_numbers
+from .russian.number_norm import normalize_numbers as ru_normalize_numbers
 from .english.time_norm import expand_time_english
+from .russian.time_norm import expand_time_russian
 from .french.abbreviations import abbreviations_fr
 
 # Regular expression matching whitespace:
@@ -70,6 +72,8 @@ def replace_symbols(text, lang="en"):
         text = text.replace("&", " et ")
     elif lang == "pt":
         text = text.replace("&", " e ")
+    elif lang == "ru":
+        text = text.replace("&", " и ")
     elif lang == "ca":
         text = text.replace("&", " i ")
         text = text.replace("'", "")
@@ -115,6 +119,27 @@ def english_cleaners(text):
     text = en_normalize_numbers(text)
     text = expand_abbreviations(text)
     text = replace_symbols(text)
+    text = remove_aux_symbols(text)
+    text = collapse_whitespace(text)
+    return text
+
+
+def ru_cleaners(text):
+    """Pipeline for English text, including number and abbreviation expansion."""
+    # text = convert_to_ascii(text)
+    text = lowercase(text)
+    text = expand_time_russian(text)
+    text = ru_normalize_numbers(text)
+    text = replace_symbols(text, lang="ru")
+    text = remove_aux_symbols(text)
+    text = collapse_whitespace(text)
+    return text
+
+
+def ru_phoneme_cleaners(text):
+    """Pipeline for phonemes mode, including number and abbreviation expansion."""
+    text = ru_normalize_numbers(text)
+    text = replace_symbols(text, lang="ru")
     text = remove_aux_symbols(text)
     text = collapse_whitespace(text)
     return text

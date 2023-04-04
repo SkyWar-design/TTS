@@ -20,9 +20,12 @@ _pad = "<PAD>"
 _eos = "<EOS>"
 _bos = "<BOS>"
 _blank = "<BLNK>"  # TODO: check if we need this alongside with PAD
-_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-_punctuations = "!'(),-.:;? "
+#_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+_characters = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+# _punctuations = "!'(),-.:;? "
+_punctuations = "!'()“”«»„“,-—.:ː;? ",
 
+_t_symbols = "t͡"
 
 # DEFAULT SET OF IPA PHONEMES
 # Phonemes definition (All IPA characters)
@@ -32,7 +35,7 @@ _pulmonic_consonants = "pbtdʈɖcɟkɡqɢʔɴŋɲɳnɱmʙrʀⱱɾɽɸβfvθðsz�
 _suprasegmentals = "ˈˌːˑ"
 _other_symbols = "ʍwɥʜʢʡɕʑɺɧʲ"
 _diacrilics = "ɚ˞ɫ"
-_phonemes = _vowels + _non_pulmonic_consonants + _pulmonic_consonants + _suprasegmentals + _other_symbols + _diacrilics
+_phonemes = _vowels + _non_pulmonic_consonants + _pulmonic_consonants + _suprasegmentals + _other_symbols + _diacrilics + _t_symbols
 
 
 class BaseVocabulary:
