@@ -22,7 +22,7 @@ _bos = "<BOS>"
 _blank = "<BLNK>"  # TODO: check if we need this alongside with PAD
 # _characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 _characters = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё"
-_punctuations = "!'(),«»-—.:ː;?… "
+_punctuations = "!'(),«»-—.:ː;?“”… "
 
 custom_phonemes = "\u00E3\u00F5\u0361\u032F"
 
