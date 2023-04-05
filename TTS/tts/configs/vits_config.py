@@ -116,12 +116,15 @@ class VitsConfig(BaseTTSConfig):
     lr_gen: float = 0.0002
     lr_disc: float = 0.0002
     lr_scheduler_gen: str = "ExponentialLR"
-    lr_scheduler_gen_params: dict = field(default_factory=lambda: {"gamma": 0.999875, "last_epoch": -1})
+    lr_scheduler_gen_params: dict = field(
+        default_factory=lambda: {"gamma": 0.999875, "last_epoch": -1})
     lr_scheduler_disc: str = "ExponentialLR"
-    lr_scheduler_disc_params: dict = field(default_factory=lambda: {"gamma": 0.999875, "last_epoch": -1})
+    lr_scheduler_disc_params: dict = field(
+        default_factory=lambda: {"gamma": 0.999875, "last_epoch": -1})
     scheduler_after_epoch: bool = True
     optimizer: str = "AdamW"
-    optimizer_params: dict = field(default_factory=lambda: {"betas": [0.8, 0.99], "eps": 1e-9, "weight_decay": 0.01})
+    optimizer_params: dict = field(default_factory=lambda: {
+                                   "betas": [0.8, 0.99], "eps": 1e-9, "weight_decay": 0.01})
 
     # loss params
     kl_loss_alpha: float = 1.0
@@ -148,11 +151,11 @@ class VitsConfig(BaseTTSConfig):
     # testing
     test_sentences: List[List] = field(
         default_factory=lambda: [
-            ["It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent."],
-            ["Be a voice, not an echo."],
-            ["I'm sorry Dave. I'm afraid I can't do that."],
-            ["This cake is great. It's so delicious and moist."],
-            ["Prior to November 22, 1963."],
+            ["Мне потребовалось довольно много времени, чтобы обрести голос, и теперь, когда у меня он есть, я не собираюсь молчать."],
+            ["Будь голосом, а не эхом. Я царь - это прекрасно"],
+            ["Мне жаль, Дэйв. Боюсь, я не могу этого сделать."],
+            ["Этот торт прекрасен. Он такой вкусный и сочный."],
+            ["До 22 ноября 1963 года."]
         ]
     )
 

@@ -21,11 +21,10 @@ _eos = "<EOS>"
 _bos = "<BOS>"
 _blank = "<BLNK>"  # TODO: check if we need this alongside with PAD
 # _characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-_characters = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
-# _punctuations = "!'(),-.:;? "
-_punctuations = "!'()“”«»„“,-—.:ː;? ",
+_characters = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё"
+_punctuations = "!'(),«»-—.:ː;?… "
 
-_t_symbols = "t͡"
+custom_phonemes = "\u00E3\u00F5\u0361\u032F"
 
 # DEFAULT SET OF IPA PHONEMES
 # Phonemes definition (All IPA characters)
@@ -35,7 +34,7 @@ _pulmonic_consonants = "pbtdʈɖcɟkɡqɢʔɴŋɲɳnɱmʙrʀⱱɾɽɸβfvθðsz�
 _suprasegmentals = "ˈˌːˑ"
 _other_symbols = "ʍwɥʜʢʡɕʑɺɧʲ"
 _diacrilics = "ɚ˞ɫ"
-_phonemes = _vowels + _non_pulmonic_consonants + _pulmonic_consonants + _suprasegmentals + _other_symbols + _diacrilics + _t_symbols
+_phonemes = _vowels + _non_pulmonic_consonants + _pulmonic_consonants + _suprasegmentals + _other_symbols + _diacrilics + custom_phonemes
 
 
 class BaseVocabulary:
